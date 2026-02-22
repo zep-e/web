@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+body {
+margin: 0;
+background: #222;
+font-family: 'Work Sans', sans-serif;
+font-weight: 800;
+}
+
+.container {
+width: 80%;
+margin: 0 auto;
+}
+
+header {
+  background: #000000;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #726565;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+<style>
+
+    .col-lg-7, body, html {
+        background-color: #2C2F33 !important;
+        color: #fff;
+    }
+
+<style>
+    .hwrapper {
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+        position: relative;
+    }
+
+    .hwrapper > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .header {
+        height: 100vh;
+        width: 100vw;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .himg {
+        height: 100px;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+    }
+
+    .mbtn {
+        background: #00caff;
+        background: linear-gradient(225deg, #00caff, #0066ff);
+        color: white;
+        padding: 15px 60px 10px;
+        display: inline-block;
+        font-size: 1.5rem;
+        border-radius: 34px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: middle;
+        margin-right: 25px;
+    }
+
+    .lbtn {
+        background-color: black;
+        color: white;
+        padding: 15px 60px 10px;
+        font-size: 1.5rem;
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 34px;
+    }
+
+    .mbtn:hover {
+        box-shadow: 3px 4px 12px rgba(0, 0, 0, .5);
+    }
+
+    .lbtn:hover {
+        background-color: #252525;
+        box-shadow: 3px 4px 12px rgba(0, 0, 0, .5);
+    }
+</style>
+
+</head>
