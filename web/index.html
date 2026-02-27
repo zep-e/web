@@ -17,7 +17,8 @@
     header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(8,13,28,.65);border-bottom:1px solid var(--border);z-index:20}
     .nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0}.logo{display:inline-flex;gap:.6rem;align-items:center;color:var(--text);text-decoration:none;font-weight:700}.logo-icon{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(90deg,var(--brand),var(--brand-2));font-size:18px}
     nav ul{list-style:none;display:flex;align-items:center;gap:1rem;margin:0;padding:0}nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a:hover{color:var(--text)}
-    .theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:.45rem .65rem;cursor:pointer}
+    .theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:.45rem .75rem;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;font-weight:700}
+    .theme-toggle .mode-label{font-size:.82rem;letter-spacing:.02em}
     section{padding:4.5rem 0}.hero-section{padding-top:6rem}.eyebrow{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
     h1{font-size:clamp(2rem,6vw,4rem);margin:.2rem 0 1rem;line-height:1.1}h1 span{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;color:transparent}.lead{max-width:640px;color:var(--muted);font-size:1.1rem}
     .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}.btn{text-decoration:none;color:#fff;background:linear-gradient(90deg,var(--brand),var(--brand-2));padding:.75rem 1.2rem;border-radius:10px;font-weight:700}.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text)}
@@ -37,7 +38,12 @@
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="/about/">More</a></li>
-          <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
+          <li>
+            <button id="themeToggle" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode">
+              <span class="mode-icon" aria-hidden="true">🌙</span>
+              <span class="mode-label">Dark</span>
+            </button>
+          </li>
         </ul>
       </nav>
     </div>
@@ -51,9 +57,26 @@
   <footer><div class="container"><p>&copy; <span id="currentYear"></span> Airfan. Built with care.</p></div></footer>
   <script>
     const yearEl=document.getElementById('currentYear'); if(yearEl) yearEl.textContent=new Date().getFullYear();
-    const themeToggle=document.getElementById('themeToggle'); const savedTheme=localStorage.getItem('theme');
-    if(savedTheme==='light'){document.body.classList.add('light'); if(themeToggle) themeToggle.textContent='☀️';}
-    if(themeToggle){themeToggle.addEventListener('click',()=>{const isLight=document.body.classList.toggle('light');themeToggle.textContent=isLight?'☀️':'🌙';localStorage.setItem('theme',isLight?'light':'dark');});}
+    const themeToggle=document.getElementById('themeToggle');
+    const modeIcon=themeToggle?.querySelector('.mode-icon');
+    const modeLabel=themeToggle?.querySelector('.mode-label');
+    const savedTheme=localStorage.getItem('theme');
+    const prefersLight=window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const initialLightMode=savedTheme? savedTheme==='light' : prefersLight;
+
+    const updateThemeUi=(isLight)=>{
+      document.body.classList.toggle('light',isLight);
+      if(modeIcon) modeIcon.textContent=isLight?'☀️':'🌙';
+      if(modeLabel) modeLabel.textContent=isLight?'Light':'Dark';
+      if(themeToggle){
+        themeToggle.setAttribute('aria-pressed',String(isLight));
+        themeToggle.setAttribute('aria-label',isLight?'Switch to dark mode':'Switch to light mode');
+        themeToggle.title=isLight?'Switch to dark mode':'Switch to light mode';
+      }
+    };
+
+    updateThemeUi(initialLightMode);
+    if(themeToggle){themeToggle.addEventListener('click',()=>{const isLight=!document.body.classList.contains('light');updateThemeUi(isLight);localStorage.setItem('theme',isLight?'light':'dark');});}
     const canvas=document.getElementById('matrixCanvas');
     if(canvas){const ctx=canvas.getContext('2d');const chars='AIRFAN01<>/{}[]';const fontSize=14;let columns,drops;const reset=()=>{canvas.width=innerWidth;canvas.height=innerHeight;columns=Math.floor(canvas.width/fontSize);drops=Array(columns).fill(1)};const draw=()=>{ctx.fillStyle='rgba(0,0,0,0.08)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#00aff0';ctx.font=`${fontSize}px monospace`;for(let i=0;i<drops.length;i++){const t=chars.charAt(Math.floor(Math.random()*chars.length));ctx.fillText(t,i*fontSize,drops[i]*fontSize);if(drops[i]*fontSize>canvas.height&&Math.random()>0.975)drops[i]=0;drops[i]++}};reset();setInterval(draw,40);addEventListener('resize',reset)}
   </script>
