@@ -15,7 +15,7 @@
     *{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Inter,system-ui,-apple-system,sans-serif;background:radial-gradient(circle at top right,#172448,var(--bg) 40%);color:var(--text);line-height:1.6}
     #matrixCanvas{position:fixed;inset:0;z-index:-1;opacity:.13}.container{width:min(1024px,92vw);margin:0 auto}
     header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(8,13,28,.65);border-bottom:1px solid var(--border);z-index:20}
-    .nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0}.logo{display:inline-flex;gap:.6rem;align-items:center;color:var(--text);text-decoration:none;font-weight:700}.logo-icon{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(90deg,var(--brand),var(--brand-2));font-size:18px}
+    .nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0}.logo{display:inline-flex;gap:.6rem;align-items:center;color:var(--text);text-decoration:none;font-weight:700}.logo-icon{width:32px;height:32px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 1px var(--border)}
     nav ul{list-style:none;display:flex;align-items:center;gap:1rem;margin:0;padding:0}nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a:hover{color:var(--text)}
     .theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:.45rem .75rem;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;font-weight:700}
     .theme-toggle .mode-label{font-size:.82rem;letter-spacing:.02em}
@@ -31,7 +31,7 @@
   <canvas id="matrixCanvas" aria-hidden="true"></canvas>
   <header>
     <div class="container nav-wrap">
-      <a href="#hero" class="logo" aria-label="Airfan home"><span class="logo-icon">🌀</span><span>Airfan</span></a>
+      <a href="#hero" class="logo" aria-label="Airfan home"><img src="deskfan.webp" alt="Airfan logo" class="logo-icon" /><span>Airfan</span></a>
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="#work">Work</a></li>
