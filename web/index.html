@@ -3,82 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Airfan.in | Student Builder & Creator</title>
-  <meta name="description" content="Official website of Airfan — student creator building clean, useful web projects." />
+  <title>Airfan.in | Building Digital Experiences</title>
+  <meta name="description" content="Airfan is a student full-stack developer building modern, performant digital experiences." />
   <meta property="og:title" content="Airfan.in" />
-  <meta property="og:description" content="Student creator building clean, useful web projects." />
+  <meta property="og:description" content="Building digital experiences with a focus on speed and usability." />
   <meta property="og:url" content="https://airfan.in/new/" />
-  <meta name="theme-color" content="#00aff0" />
+  <meta name="theme-color" content="#5b8cff" />
   <style>
-    :root{--bg:#0a0f1f;--surface:rgba(14,23,46,.88);--text:#eef4ff;--muted:#b7c2db;--brand:#00aff0;--brand-2:#7a5cff;--border:rgba(255,255,255,.12)}
-    body.light{--bg:#f4f8ff;--surface:rgba(255,255,255,.9);--text:#13203a;--muted:#4a5672;--brand:#0077cc;--brand-2:#5a3bff;--border:rgba(19,32,58,.15)}
-    *{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Inter,system-ui,-apple-system,sans-serif;background:radial-gradient(circle at top right,#172448,var(--bg) 40%);color:var(--text);line-height:1.6}
-    #matrixCanvas{position:fixed;inset:0;z-index:-1;opacity:.13}.container{width:min(1024px,92vw);margin:0 auto}
-    header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(8,13,28,.65);border-bottom:1px solid var(--border);z-index:20}
-    .nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0}.logo{display:inline-flex;gap:.6rem;align-items:center;color:var(--text);text-decoration:none;font-weight:700}.logo-icon{width:32px;height:32px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 1px var(--border)}
-    nav ul{list-style:none;display:flex;align-items:center;gap:1rem;margin:0;padding:0}nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a:hover{color:var(--text)}
-    .theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:.45rem .75rem;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;font-weight:700}
-    .theme-toggle .mode-label{font-size:.82rem;letter-spacing:.02em}
-    section{padding:4.5rem 0}.hero-section{padding-top:6rem}.eyebrow{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-    h1{font-size:clamp(2rem,6vw,4rem);margin:.2rem 0 1rem;line-height:1.1}h1 span{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;color:transparent}.lead{max-width:640px;color:var(--muted);font-size:1.1rem}
-    .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}.btn{text-decoration:none;color:#fff;background:linear-gradient(90deg,var(--brand),var(--brand-2));padding:.75rem 1.2rem;border-radius:10px;font-weight:700}.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text)}
-    h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1.5rem}.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}.project-item{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem}.project-item p{color:var(--muted)}.project-link{color:var(--brand);text-decoration:none;font-weight:700}
-    .about-section p,.contact-section p{color:var(--muted);max-width:760px}.social-links{display:flex;gap:1rem}.social-links a{color:var(--text)}footer{border-top:1px solid var(--border);padding:1.2rem 0 2.2rem;color:var(--muted)}
-    @media (max-width:680px){nav ul{gap:.7rem;font-size:.92rem;flex-wrap:wrap;justify-content:flex-end}}
+    :root{--bg:#090f1f;--bg-2:#0f1630;--card:#131d3d;--text:#eef3ff;--muted:#aab8de;--brand:#6f8fff;--brand-2:#35d4c0;--border:rgba(255,255,255,.13)}
+    body.light{--bg:#f2f6ff;--bg-2:#e9efff;--card:#ffffff;--text:#1a2440;--muted:#556182;--brand:#4667ea;--brand-2:#1db4a1;--border:rgba(26,36,64,.14)}
+    *{box-sizing:border-box}html,body{margin:0;padding:0;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--text);background:radial-gradient(circle at top right,#182959,var(--bg) 42%);line-height:1.6}
+    #matrixCanvas{position:fixed;inset:0;z-index:-1;opacity:.08}
+    .container{width:min(1080px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(10,16,34,.72);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}.logo{display:inline-flex;align-items:center;gap:.65rem;color:var(--text);text-decoration:none;font-weight:800}
+    .logo-icon{width:34px;height:34px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 1px var(--border)}
+    nav ul{display:flex;list-style:none;gap:1rem;margin:0;padding:0;align-items:center}nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a:hover{color:var(--text)}
+    .theme-toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:.45rem .75rem;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;font-weight:700}
+    .theme-toggle .mode-label{font-size:.82rem}
+    section{padding:4.8rem 0}.hero{padding-top:6rem}.eyebrow{color:var(--brand-2);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(2.1rem,7vw,4.3rem);line-height:1.05;margin:.4rem 0 1rem}h1 span{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:1.12rem;max-width:700px}.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:.78rem 1.2rem;border-radius:10px;color:#fff;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+    .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1.3rem}.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem}.stat h3{margin:0;color:var(--brand-2)}.stat p{margin:.3rem 0 0;color:var(--muted)}
+    h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 1.2rem}.section-sub{color:var(--muted);margin-top:-.2rem;margin-bottom:1.4rem}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem}.chip{display:inline-block;border:1px solid var(--border);padding:.2rem .5rem;border-radius:999px;color:var(--muted);font-size:.8rem;margin-right:.35rem}
+    .card p{color:var(--muted)}
+    .skills .bar{margin-bottom:.9rem}.skills label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:.3rem}.track{height:10px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+    footer{border-top:1px solid var(--border);padding:1.3rem 0 2rem;color:var(--muted)}
+    @media (max-width:780px){nav ul{gap:.7rem;font-size:.92rem;flex-wrap:wrap;justify-content:flex-end}.stats{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <canvas id="matrixCanvas" aria-hidden="true"></canvas>
   <header>
     <div class="container nav-wrap">
-      <a href="#hero" class="logo" aria-label="Airfan home"><img src="deskfan.webp" alt="Airfan logo" class="logo-icon" /><span>Airfan</span></a>
+      <a href="#home" class="logo" aria-label="Airfan home"><img src="deskfan.webp" alt="Airfan logo" class="logo-icon" /><span>airfan.in</span></a>
       <nav aria-label="Main navigation">
         <ul>
-          <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="/about/">More</a></li>
-          <li>
-            <button id="themeToggle" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode">
-              <span class="mode-icon" aria-hidden="true">🌙</span>
-              <span class="mode-label">Dark</span>
-            </button>
-          </li>
+          <li><button id="themeToggle" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode"><span class="mode-icon" aria-hidden="true">🌙</span><span class="mode-label">Dark</span></button></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main>
-    <section id="hero" class="hero-section"><div class="container"><p class="eyebrow">airfan.in</p><h1>Hi, I’m <span>Airfan</span>.</h1><p class="lead">A student building practical websites and fun internet projects.</p><div class="hero-actions"><a href="#work" class="btn">View My Work</a><a href="#contact" class="btn btn-secondary">Get In Touch</a></div></div></section>
-    <section id="work" class="work-section"><div class="container"><h2>Featured Work</h2><div class="project-grid"><article class="project-item"><h3>Personal Site Refresh</h3><p>A faster, cleaner portfolio with better mobile UX, SEO metadata, and accessibility improvements.</p><a href="#hero" class="project-link">You’re viewing it now →</a></article><article class="project-item"><h3>More Projects Soon</h3><p>I’m actively working on small tools and experiments. This section will be updated regularly.</p><a href="#contact" class="project-link">Ask what I’m building →</a></article></div></div></section>
-    <section id="about" class="about-section"><div class="container"><h2>About Me</h2><p>I enjoy creating clean interfaces, learning by shipping projects, and improving ideas through feedback.</p><p>Right now I’m focused on frontend development, performance, and making things people actually use.</p></div></section>
-    <section id="contact" class="contact-section"><div class="container"><h2>Get In Touch</h2><p>Open to collaborations, internships, and interesting project chats.</p><p>Email: <a href="mailto:hello@airfan.in">hello@airfan.in</a></p><div class="social-links"><a href="https://github.com/airfan" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div></section>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <p class="eyebrow">Building digital experiences</p>
+      <h1>Hi, I’m <span>Airfan</span>.</h1>
+      <p class="lead">Student full-stack developer crafting modern web projects with clean design, fast performance, and practical user-first features.</p>
+      <div class="hero-actions"><a class="btn" href="#work">View Projects</a><a class="btn btn-secondary" href="#about">About Me</a></div>
+      <div class="stats">
+        <article class="stat"><h3>25+</h3><p>Projects completed</p></article>
+        <article class="stat"><h3>2+</h3><p>Years learning & building</p></article>
+        <article class="stat"><h3>100%</h3><p>Always shipping improvements</p></article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="section-sub">I enjoy turning ideas into polished products. I focus on frontend quality, usable UX, and backend reliability.</p>
+    </section>
+
+    <section id="work">
+      <h2>Featured Work</h2>
+      <p class="section-sub">A selection of projects and experiments I’ve shipped recently.</p>
+      <div class="cards">
+        <article class="card"><span class="chip">Portfolio</span><h3>Airfan.in Refresh</h3><p>Modern redesign with improved navigation, responsive layout, mode toggle, and refined structure for future expansion.</p></article>
+        <article class="card"><span class="chip">Tooling</span><h3>Student Utility Apps</h3><p>Small tools that make school workflows easier, from quick calculators to schedule helpers and productivity widgets.</p></article>
+        <article class="card"><span class="chip">Web Dev</span><h3>UI Components Lab</h3><p>A sandbox for reusable UI patterns focused on accessibility, visual consistency, and mobile-first behavior.</p></article>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>Skills & Expertise</h2>
+      <div class="bar"><label><span>Frontend Development</span><span>90%</span></label><div class="track"><div class="fill" style="width:90%"></div></div></div>
+      <div class="bar"><label><span>Backend Development</span><span>78%</span></label><div class="track"><div class="fill" style="width:78%"></div></div></div>
+      <div class="bar"><label><span>Design & UX</span><span>82%</span></label><div class="track"><div class="fill" style="width:82%"></div></div></div>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p class="section-sub">Want to collaborate or just say hi? Reach out anytime.</p>
+      <p>Email: <a href="mailto:hello@airfan.in">hello@airfan.in</a> · GitHub: <a href="https://github.com/airfan" target="_blank" rel="noopener noreferrer">@airfan</a></p>
+    </section>
   </main>
-  <footer><div class="container"><p>&copy; <span id="currentYear"></span> Airfan. Built with care.</p></div></footer>
+
+  <footer>
+    <div class="container">© <span id="currentYear"></span> Airfan. All rights reserved.</div>
+  </footer>
+
   <script>
     const yearEl=document.getElementById('currentYear'); if(yearEl) yearEl.textContent=new Date().getFullYear();
-    const themeToggle=document.getElementById('themeToggle');
-    const modeIcon=themeToggle?.querySelector('.mode-icon');
-    const modeLabel=themeToggle?.querySelector('.mode-label');
-    const savedTheme=localStorage.getItem('theme');
-    const prefersLight=window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    const initialLightMode=savedTheme? savedTheme==='light' : prefersLight;
-
-    const updateThemeUi=(isLight)=>{
-      document.body.classList.toggle('light',isLight);
-      if(modeIcon) modeIcon.textContent=isLight?'☀️':'🌙';
-      if(modeLabel) modeLabel.textContent=isLight?'Light':'Dark';
-      if(themeToggle){
-        themeToggle.setAttribute('aria-pressed',String(isLight));
-        themeToggle.setAttribute('aria-label',isLight?'Switch to dark mode':'Switch to light mode');
-        themeToggle.title=isLight?'Switch to dark mode':'Switch to light mode';
-      }
-    };
-
-    updateThemeUi(initialLightMode);
-    if(themeToggle){themeToggle.addEventListener('click',()=>{const isLight=!document.body.classList.contains('light');updateThemeUi(isLight);localStorage.setItem('theme',isLight?'light':'dark');});}
+    const themeToggle=document.getElementById('themeToggle'); const modeIcon=themeToggle?.querySelector('.mode-icon'); const modeLabel=themeToggle?.querySelector('.mode-label');
+    const savedTheme=localStorage.getItem('theme'); const prefersLight=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches; const initialLightMode=savedTheme?savedTheme==='light':prefersLight;
+    const updateThemeUi=(isLight)=>{document.body.classList.toggle('light',isLight); if(modeIcon) modeIcon.textContent=isLight?'☀️':'🌙'; if(modeLabel) modeLabel.textContent=isLight?'Light':'Dark'; if(themeToggle){themeToggle.setAttribute('aria-pressed',String(isLight)); themeToggle.setAttribute('aria-label',isLight?'Switch to dark mode':'Switch to light mode'); themeToggle.title=isLight?'Switch to dark mode':'Switch to light mode';}};
+    updateThemeUi(initialLightMode); if(themeToggle){themeToggle.addEventListener('click',()=>{const isLight=!document.body.classList.contains('light'); updateThemeUi(isLight); localStorage.setItem('theme',isLight?'light':'dark');});}
     const canvas=document.getElementById('matrixCanvas');
-    if(canvas){const ctx=canvas.getContext('2d');const chars='AIRFAN01<>/{}[]';const fontSize=14;let columns,drops;const reset=()=>{canvas.width=innerWidth;canvas.height=innerHeight;columns=Math.floor(canvas.width/fontSize);drops=Array(columns).fill(1)};const draw=()=>{ctx.fillStyle='rgba(0,0,0,0.08)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#00aff0';ctx.font=`${fontSize}px monospace`;for(let i=0;i<drops.length;i++){const t=chars.charAt(Math.floor(Math.random()*chars.length));ctx.fillText(t,i*fontSize,drops[i]*fontSize);if(drops[i]*fontSize>canvas.height&&Math.random()>0.975)drops[i]=0;drops[i]++}};reset();setInterval(draw,40);addEventListener('resize',reset)}
+    if(canvas){const ctx=canvas.getContext('2d');const chars='AIRFAN01<>/{}[]';const fontSize=14;let columns,drops;const reset=()=>{canvas.width=innerWidth;canvas.height=innerHeight;columns=Math.floor(canvas.width/fontSize);drops=Array(columns).fill(1)};const draw=()=>{ctx.fillStyle='rgba(0,0,0,.08)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#6f8fff';ctx.font=`${fontSize}px monospace`;for(let i=0;i<drops.length;i++){const t=chars.charAt(Math.floor(Math.random()*chars.length));ctx.fillText(t,i*fontSize,drops[i]*fontSize);if(drops[i]*fontSize>canvas.height&&Math.random()>0.975)drops[i]=0;drops[i]++}};reset();setInterval(draw,40);addEventListener('resize',reset)}
   </script>
 </body>
 </html>
