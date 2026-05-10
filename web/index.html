@@ -1,106 +1,112 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta content="Airfan's Website" property="og:title">
-    <meta content="Free stuff 👀🤫" property="og:description">
-    <meta content="https://airfan.only-fans.club/" property="og:url">
-    <meta content="https://ih1.redbubble.net/image.2332544247.4828/st,small,507x507-pad,600x600,f8f8f8.jpg" property="og:image">
-    <meta content="00AFF0" data-react-helmet="true" name="theme-color">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airfan - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-<link rel="shortcut icon" href="deskfan.webp">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airfan.in | Building Digital Experiences</title>
+  <meta name="description" content="Airfan is a student full-stack developer building modern, performant digital experiences." />
+  <meta property="og:title" content="Airfan.in" />
+  <meta property="og:description" content="Building digital experiences with a focus on speed and usability." />
+  <meta property="og:url" content="https://airfan.in/new/" />
+  <meta name="theme-color" content="#5b8cff" />
+  <style>
+    :root{--bg:#090f1f;--bg-2:#0f1630;--card:#131d3d;--text:#eef3ff;--muted:#aab8de;--brand:#6f8fff;--brand-2:#35d4c0;--border:rgba(255,255,255,.13)}
+    body.light{--bg:#f2f6ff;--bg-2:#e9efff;--card:#ffffff;--text:#1a2440;--muted:#556182;--brand:#4667ea;--brand-2:#1db4a1;--border:rgba(26,36,64,.14)}
+    *{box-sizing:border-box}html,body{margin:0;padding:0;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--text);background:radial-gradient(circle at top right,#182959,var(--bg) 42%);line-height:1.6}
+    #matrixCanvas{position:fixed;inset:0;z-index:-1;opacity:.08}
+    .container{width:min(1080px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(10,16,34,.72);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}.logo{display:inline-flex;align-items:center;gap:.65rem;color:var(--text);text-decoration:none;font-weight:800}
+    .logo-icon{width:34px;height:34px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 1px var(--border)}
+    nav ul{display:flex;list-style:none;gap:1rem;margin:0;padding:0;align-items:center}nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a:hover{color:var(--text)}
+    .theme-toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:.45rem .75rem;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;font-weight:700}
+    .theme-toggle .mode-label{font-size:.82rem}
+    section{padding:4.8rem 0}.hero{padding-top:6rem}.eyebrow{color:var(--brand-2);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(2.1rem,7vw,4.3rem);line-height:1.05;margin:.4rem 0 1rem}h1 span{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:1.12rem;max-width:700px}.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:.78rem 1.2rem;border-radius:10px;color:#fff;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+    .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1.3rem}.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem}.stat h3{margin:0;color:var(--brand-2)}.stat p{margin:.3rem 0 0;color:var(--muted)}
+    h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 1.2rem}.section-sub{color:var(--muted);margin-top:-.2rem;margin-bottom:1.4rem}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem}.chip{display:inline-block;border:1px solid var(--border);padding:.2rem .5rem;border-radius:999px;color:var(--muted);font-size:.8rem;margin-right:.35rem}
+    .card p{color:var(--muted)}
+    .skills .bar{margin-bottom:.9rem}.skills label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:.3rem}.track{height:10px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+    footer{border-top:1px solid var(--border);padding:1.3rem 0 2rem;color:var(--muted)}
+    @media (max-width:780px){nav ul{gap:.7rem;font-size:.92rem;flex-wrap:wrap;justify-content:flex-end}.stats{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-    <canvas id="matrixCanvas"></canvas>
-    <header>
-        <div class="container">
-            <a href="#" class="logo"><img src="deskfan.webp" alt="Desk Fan Icon" class="logo-icon"> Airfan</a>
-            <nav>
-                <ul>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://airfan.only-fans.club/" target="_blank">Blog</a></li>
-                    <li>
-                        <div class="toggle-container">
-                            <input type="checkbox" id="darkmode-toggle" class="darkmode-toggle">
-                            <label for="darkmode-toggle" class="toggle-label">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" class="moon">
-                                    <path fill="currentColor" d="M194.526 248.814c0 38.69-31.346 70.035-70.035 70.035-16.143 0-31.026-5.467-42.85-14.733-28.56 22.091-66.974 35.155-108.974 35.155C31.346 339.269 0 307.923 0 269.234c0-42 13.064-80.414 35.155-108.974-9.266-11.823-14.733-26.707-14.733-42.85 0-38.69 31.346-70.035 70.035-70.035 42 0 80.414 13.064 108.974 35.155 9.266-11.823 14.733-26.707 14.733-42.85 0-38.69 31.346-70.035 70.035-70.035s70.035 31.346 70.035 70.035c0 16.143-5.467 31.026-14.733 42.85 22.091 28.56 35.155 66.974 35.155 108.974 0 38.69-31.346 70.035-70.035 70.035s-70.035-31.346-70.035-70.035zm196.657-30.824c0-38.69-31.346-70.035-70.035-70.035-16.143 0-31.026-5.467-42.85-14.733-28.56 22.091-66.974 35.155-108.974 35.155-38.69 0-70.035-31.346-70.035-70.035s31.346-70.035 70.035-70.035c42 0 80.414 13.064 108.974 35.155 9.266-11.823 14.733-26.707 14.733-42.85 0-38.69 31.346-70.035 70.035-70.035s70.035 31.346 70.035 70.035c0 16.143-5.467 31.026-14.733 42.85 22.091 28.56 35.155 66.974 35.155 108.974 0 38.69-31.346 70.035-70.035 70.035z"/>
-                                </svg>
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" class="sun">
-                                    <path fill="currentColor" d="M248 96c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm0 120c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm0 120c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zM128 248c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zm240 0c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zm-120-120c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zm-120 240c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zm240-120c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zm-120 240c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zM80 168c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zm0 160c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zm240-160c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24zm0 160c0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24 24-10.745 24-24z"/>
-                                </svg>
-                            </label>
-                        </div>
-                        </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-   <section id="hero" class="hero-section">
-    <div class="container">
-        <h1>Hi, I'm <span>Airfan</span>.</h1> 
-        <p>A Student.</p>
-        <a href="#work" class="btn">View My Work</a>
+  <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+  <header>
+    <div class="container nav-wrap">
+      <a href="#home" class="logo" aria-label="Airfan home"><img src="deskfan.webp" alt="Airfan logo" class="logo-icon" /><span>airfan.in</span></a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="themeToggle" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode"><span class="mode-icon" aria-hidden="true">🌙</span><span class="mode-label">Dark</span></button></li>
+        </ul>
+      </nav>
     </div>
-</section>
-    <section id="work" class="work-section">
-        <div class="container">
-            <h2>My Work</h2>
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="https://www.icegif.com/wp-content/uploads/2023/01/icegif-162.gif" alt="Project 1">
-                    <h3>Project X</h3>
-                    <p>Never gonna give you up. Never gonna let you down. Never gonna run around and desert you</p>
-                    <a href="projects/project1.html" class="project-link">View Project</a>
-                </div>
-                </div>
-        </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <p class="eyebrow">Building digital experiences</p>
+      <h1>Hi, I’m <span>Airfan</span>.</h1>
+      <p class="lead">Student full-stack developer crafting modern web projects with clean design, fast performance, and practical user-first features.</p>
+      <div class="hero-actions"><a class="btn" href="#work">View Projects</a><a class="btn btn-secondary" href="#about">About Me</a></div>
+      <div class="stats">
+        <article class="stat"><h3>25+</h3><p>Projects completed</p></article>
+        <article class="stat"><h3>2+</h3><p>Years learning & building</p></article>
+        <article class="stat"><h3>100%</h3><p>Always shipping improvements</p></article>
+      </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Idk</p>
-            <p>I love building clean, functional, and user-friendly digital experiences.</p>
-        </div>
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="section-sub">I enjoy turning ideas into polished products. I focus on frontend quality, usable UX, and backend reliability.</p>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-             <h2>Get In Touch</h2>
-<p>Feel free to reach out for collaborations or just a chat!</p>
-<p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-<div class="social-links">
-<a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-<a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-</div>
-</div>
-</section>
+    <section id="work">
+      <h2>Featured Work</h2>
+      <p class="section-sub">A selection of projects and experiments I’ve shipped recently.</p>
+      <div class="cards">
+        <article class="card"><span class="chip">Portfolio</span><h3>Airfan.in Refresh</h3><p>Modern redesign with improved navigation, responsive layout, mode toggle, and refined structure for future expansion.</p></article>
+        <article class="card"><span class="chip">Tooling</span><h3>Student Utility Apps</h3><p>Small tools that make school workflows easier, from quick calculators to schedule helpers and productivity widgets.</p></article>
+        <article class="card"><span class="chip">Web Dev</span><h3>UI Components Lab</h3><p>A sandbox for reusable UI patterns focused on accessibility, visual consistency, and mobile-first behavior.</p></article>
+      </div>
+    </section>
 
-    </main>
+    <section id="skills" class="skills">
+      <h2>Skills & Expertise</h2>
+      <div class="bar"><label><span>Frontend Development</span><span>90%</span></label><div class="track"><div class="fill" style="width:90%"></div></div></div>
+      <div class="bar"><label><span>Backend Development</span><span>78%</span></label><div class="track"><div class="fill" style="width:78%"></div></div></div>
+      <div class="bar"><label><span>Design & UX</span><span>82%</span></label><div class="track"><div class="fill" style="width:82%"></div></div></div>
+    </section>
 
-<footer>
-    <div class="container">
-        <p>&copy; <span id="currentYear"></span> Airfan. All rights reserved.</p>
-    </div>
-</footer>
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p class="section-sub">Want to collaborate or just say hi? Reach out anytime.</p>
+      <p>Email: <a href="mailto:hello@airfan.in">hello@airfan.in</a> · GitHub: <a href="https://github.com/airfan" target="_blank" rel="noopener noreferrer">@airfan</a></p>
+    </section>
+  </main>
 
-<script src="script.js"></script>
-<script src="matrix-script.js"></script>
-<script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
+  <footer>
+    <div class="container">© <span id="currentYear"></span> Airfan. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const yearEl=document.getElementById('currentYear'); if(yearEl) yearEl.textContent=new Date().getFullYear();
+    const themeToggle=document.getElementById('themeToggle'); const modeIcon=themeToggle?.querySelector('.mode-icon'); const modeLabel=themeToggle?.querySelector('.mode-label');
+    const savedTheme=localStorage.getItem('theme'); const prefersLight=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches; const initialLightMode=savedTheme?savedTheme==='light':prefersLight;
+    const updateThemeUi=(isLight)=>{document.body.classList.toggle('light',isLight); if(modeIcon) modeIcon.textContent=isLight?'☀️':'🌙'; if(modeLabel) modeLabel.textContent=isLight?'Light':'Dark'; if(themeToggle){themeToggle.setAttribute('aria-pressed',String(isLight)); themeToggle.setAttribute('aria-label',isLight?'Switch to dark mode':'Switch to light mode'); themeToggle.title=isLight?'Switch to dark mode':'Switch to light mode';}};
+    updateThemeUi(initialLightMode); if(themeToggle){themeToggle.addEventListener('click',()=>{const isLight=!document.body.classList.contains('light'); updateThemeUi(isLight); localStorage.setItem('theme',isLight?'light':'dark');});}
+    const canvas=document.getElementById('matrixCanvas');
+    if(canvas){const ctx=canvas.getContext('2d');const chars='AIRFAN01<>/{}[]';const fontSize=14;let columns,drops;const reset=()=>{canvas.width=innerWidth;canvas.height=innerHeight;columns=Math.floor(canvas.width/fontSize);drops=Array(columns).fill(1)};const draw=()=>{ctx.fillStyle='rgba(0,0,0,.08)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#6f8fff';ctx.font=`${fontSize}px monospace`;for(let i=0;i<drops.length;i++){const t=chars.charAt(Math.floor(Math.random()*chars.length));ctx.fillText(t,i*fontSize,drops[i]*fontSize);if(drops[i]*fontSize>canvas.height&&Math.random()>0.975)drops[i]=0;drops[i]++}};reset();setInterval(draw,40);addEventListener('resize',reset)}
+  </script>
 </body>
 </html>
-
